@@ -4,13 +4,13 @@ import { Fragment } from 'react';
 import { MapPin, Calendar, Users, FileText, ArrowLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { highlightMatch } from './SearchBar';
-import type { Event, Person, Source } from '@algerian-history/shared';
+import type { HistoricalEvent, Person, Source } from '@algerian-history/shared';
 
 interface SearchResultsProps {
   query: string;
-  events: Event[];
+  events: HistoricalEvent[];
   isLoading: boolean;
-  onEventSelect: (event: Event) => void;
+  onEventSelect: (event: HistoricalEvent) => void;
   onClose: () => void;
   className?: string;
 }
@@ -117,7 +117,7 @@ export function SearchResults({
 }
 
 interface SearchResultItemProps {
-  event: Event;
+  event: HistoricalEvent;
   query: string;
   onClick: () => void;
 }
