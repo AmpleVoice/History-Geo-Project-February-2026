@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # خريطة المقاومات الشعبية الجزائرية (1830-1954)
 # Algerian Popular Revolutions Interactive Map
 
@@ -145,3 +146,7 @@ MIT License - see [LICENSE](LICENSE)
 هذا المشروع يهدف إلى الحفاظ على الذاكرة التاريخية للمقاومة الشعبية الجزائرية وتوفير مرجع رقمي موثق للباحثين والمهتمين.
 
 </div>
+=======
+# History-Geo-Project-February-2026
+NOthing here yet
+>>>>>>> 8f4c07daecf6ebde219d738ee43e7848dc151297

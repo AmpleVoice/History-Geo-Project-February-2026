@@ -47,7 +47,7 @@ export function ImportExport({
 
     try {
       const text = await file.text();
-      let parsedData: any[];
+      let parsedData: any;
       const format = file.name.endsWith('.json') ? 'json' : 'csv';
 
       if (format === 'json') {

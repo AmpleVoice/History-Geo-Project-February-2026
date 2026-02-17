@@ -102,7 +102,7 @@ export default function AboutPage() {
               <h3 className="font-semibold text-neutral-700 mb-2">أعضاء المجموعة:</h3>
               <ul className="space-y-1 text-neutral-600">
                 <li>• محمد علاء الدين خليفي</li>
-                <li>• آيت سعيد طاهر حكيم</li>
+                <li>• أيت سعيد طاهر حكيم</li>
                 <li>• يايسي أميرة</li>
                 <li>• عميروش ياسمين</li>
               </ul>
