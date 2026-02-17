@@ -120,7 +120,6 @@ export function LoginForm({ redirectTo = '/admin' }: LoginFormProps) {
 
         <div className="mt-6 pt-4 border-t border-neutral-100">
           <p className="text-sm text-neutral-500 text-center">
-            للتجربة: admin@example.com / admin123
           </p>
         </div>
       </CardContent>

@@ -85,7 +85,7 @@ export function Header({ onSearch, searchQuery = '' }: HeaderProps) {
               </Button>
             </Link>
 
-            <Link href="/settings">
+            <Link href="/">
               <Button
                 variant="ghost"
                 size="sm"
