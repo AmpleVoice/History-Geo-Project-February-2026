@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Arabic fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap');
+
+/* Base styles */
+@layer base {
+  :root {
+    --color-primary: 0 98 51;
+    --color-accent: 210 16 52;
+    --color-background: 250 250 250;
+    --color-foreground: 23 23 23;
+  }
+
+  html {
+    direction: rtl;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-neutral-50 text-neutral-900 font-sans antialiased;
+    font-feature-settings: 'ss01' on, 'ss02' on;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Arabic text optimization */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-primary-500/20 text-primary-900;
+  }
+}
+
+/* Component styles */
+@layer components {
+  /* Card component */
+  .card {
+    @apply bg-white rounded-card shadow-card p-4 transition-shadow hover:shadow-hover;
+  }
+
+  /* Button base */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-neutral-200 text-neutral-800 hover:bg-neutral-300 focus:ring-neutral-400;
+  }
+
+  .btn-danger {
+    @apply btn bg-accent-500 text-white hover:bg-accent-600 focus:ring-accent-500;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent hover:bg-neutral-100 focus:ring-neutral-400;
+  }
+
+  /* Input base */
+  .input {
+    @apply w-full px-4 py-2 border border-neutral-300 rounded-lg bg-white text-neutral-900 placeholder:text-neutral-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-colors;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-800;
+  }
+
+  .badge-accent {
+    @apply badge bg-accent-100 text-accent-800;
+  }
+
+  .badge-neutral {
+    @apply badge bg-neutral-100 text-neutral-800;
+  }
+
+  .badge-warning {
+    @apply badge bg-yellow-100 text-yellow-800;
+  }
+
+  /* Panel */
+  .panel {
+    @apply bg-white border-s border-neutral-200 shadow-panel overflow-y-auto;
+  }
+
+  /* Map container */
+  .map-container {
+    @apply w-full h-full min-h-[400px];
+  }
+
+  /* RTL-specific utilities */
+  .flip-x-rtl {
+    @apply rtl:-scale-x-100;
+  }
+
+  /* Timeline */
+  .timeline-item {
+    @apply relative ps-8 pb-8 border-s-2 border-primary-200 last:border-transparent;
+  }
+
+  .timeline-item::before {
+    content: '';
+    @apply absolute start-0 top-0 w-4 h-4 -translate-x-1/2 rounded-full bg-primary-500 border-2 border-white;
+  }
+
+  /* Status indicators */
+  .status-confirmed {
+    @apply text-primary-600 bg-primary-50;
+  }
+
+  .status-review {
+    @apply text-yellow-600 bg-yellow-50;
+  }
+
+  .status-unverified {
+    @apply text-accent-600 bg-accent-50;
+  }
+
+  .status-draft {
+    @apply text-neutral-600 bg-neutral-100;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  /* Text utilities for Arabic */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Hide scrollbar but allow scrolling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Custom scrollbar */
+  .scrollbar-custom {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--color-primary)) transparent;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--color-primary) / 0.3);
+    border-radius: 3px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(var(--color-primary) / 0.5);
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+/* Leaflet overrides for RTL */
+.leaflet-container {
+  @apply font-sans;
+  direction: ltr; /* Map itself stays LTR */
+}
+
+.leaflet-popup-content-wrapper {
+  direction: rtl;
+  @apply font-sans text-neutral-900;
+}
+
+.leaflet-popup-content {
+  @apply m-3;
+}
+
+.leaflet-control-zoom {
+  @apply border-none shadow-card;
+}
+
+.leaflet-control-zoom a {
+  @apply text-neutral-700 hover:text-primary-600;
+}
+
+/* Map tooltip */
+.map-tooltip {
+  direction: rtl;
+  @apply bg-white rounded-lg shadow-lg p-3 min-w-[200px];
+}
+
+.map-tooltip h4 {
+  @apply font-heading font-bold text-primary-700 mb-1;
+}
+
+.map-tooltip p {
+  @apply text-sm text-neutral-600;
+}

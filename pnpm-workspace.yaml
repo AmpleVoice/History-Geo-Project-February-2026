@@ -1,0 +1,42 @@
+packages:
+  - apps/*
+  - packages/*
+
+allowedBuiltDependencies:
+  - '@nestjs/core'
+  - '@prisma/client'
+  - '@prisma/engines'
+  - bcrypt
+  - prisma
+  - unrs-resolver
+
+onlyBuiltDependencies:
+  - ','
+  - '-'
+  - /
+  - '@'
+  - '@nestjs/core'
+  - '@prisma/client'
+  - '@prisma/engines'
+  - a
+  - b
+  - bcrypt
+  - c
+  - e
+  - esbuild
+  - g
+  - i
+  - j
+  - l
+  - m
+  - n
+  - o
+  - p
+  - prisma
+  - r
+  - s
+  - t
+  - u
+  - unrs-resolver
+  - v
+  - y

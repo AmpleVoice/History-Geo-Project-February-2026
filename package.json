@@ -1,0 +1,35 @@
+{
+  "name": "algerian-history-map",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Interactive map of Algerian popular revolts and resistances (1830-1954)",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:web": "npm run dev -w @algerian-history/web",
+    "dev:api": "npm run dev -w @algerian-history/api",
+    "build": "npm run build -w @algerian-history/shared && npm run build -w @algerian-history/api && npm run build -w @algerian-history/web",
+    "build:shared": "npm run build -w @algerian-history/shared",
+    "build:api": "npm run build -w @algerian-history/api",
+    "build:web": "npm run build -w @algerian-history/web",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "db:migrate": "npm run prisma:migrate -w @algerian-history/api",
+    "db:seed": "npm run db:seed -w @algerian-history/api",
+    "db:studio": "npm run prisma:studio -w @algerian-history/api",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "clean": "rm -rf node_modules apps/*/node_modules packages/*/node_modules"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

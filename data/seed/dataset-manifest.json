@@ -1,0 +1,74 @@
+{
+  "name": "Algerian Resistance History Dataset",
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-29",
+  "description": "مجموعة بيانات تاريخية للمقاومات الشعبية الجزائرية (1830-1954)",
+  "language": "ar",
+  "files": [
+    {
+      "path": "events.json",
+      "type": "events",
+      "count": 10,
+      "description": "الأحداث الأساسية"
+    },
+    {
+      "path": "events-expanded.json",
+      "type": "events",
+      "count": 20,
+      "description": "أحداث موسعة - المجموعة الأولى"
+    },
+    {
+      "path": "events-additional.json",
+      "type": "events",
+      "count": 25,
+      "description": "أحداث إضافية - المجموعة الثانية"
+    },
+    {
+      "path": "events-20th-century.json",
+      "type": "events",
+      "count": 8,
+      "description": "أحداث القرن العشرين (1945-1954)"
+    }
+  ],
+  "statistics": {
+    "totalEvents": 63,
+    "byType": {
+      "ثورة": 18,
+      "مقاومة": 16,
+      "انتفاضة": 12,
+      "معركة": 7,
+      "حصار": 2
+    },
+    "byStatus": {
+      "مؤكد": 42,
+      "بحاجة_لمراجعة": 12,
+      "غير_مؤكد": 1
+    },
+    "timeRange": {
+      "start": 1830,
+      "end": 1954
+    },
+    "regionsRepresented": 40
+  },
+  "sources": {
+    "totalSources": 13,
+    "primarySources": 10,
+    "academicReferences": 8
+  },
+  "people": {
+    "totalPeople": 15,
+    "leaders": 12,
+    "historicalFigures": 3
+  },
+  "notes": [
+    "جميع الأحداث تتطلب مصادر موثقة",
+    "الأحداث بحالة 'بحاجة_لمراجعة' تحتاج تأكيد من مختصين",
+    "يمكن إضافة مزيد من التفاصيل لكل حدث",
+    "الإحداثيات الجغرافية تقريبية وتحتاج مراجعة"
+  ],
+  "contributors": [
+    "فريق المشروع",
+    "باحثون في التاريخ الجزائري"
+  ],
+  "license": "CC BY-NC-SA 4.0"
+}
